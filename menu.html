@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitars For Kids - Menu</title>
+    <style>
+        :root {
+            /* Customizable box variables */
+            --box-top: 200px;
+            --box-offset: 50px;
+            --box-width: 350px;
+            /* Custom box styling */
+            --box-bg-color: #232323;
+            --box-border-color: #000000;
+            --box-border-width: 5px; 
+            --box-border-radius: 8px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Background image that appears on logo hover */
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('backtofun.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            z-index: -2;
+            pointer-events: none;
+            filter: brightness(0.9);
+        }
+
+        /* Dark overlay for logo hover effect */
+        .dark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            z-index: 5;
+        }
+
+        .logo:hover ~ .dark-overlay,
+        .logo:hover ~ .bg-image {
+            opacity: 1;
+        }
+
+        /* Make all content except logo darker when hovering logo */
+        .logo:hover ~ .content-wrapper,
+        .logo:hover ~ .dark-overlay ~ .content-wrapper {
+            filter: brightness(0.5);
+            transition: filter 0.5s ease;
+        }
+
+        .logo {
+            margin: 30px 0;
+            text-align: center;
+            transition: transform 0.3s ease;
+            z-index: 10;
+            position: relative;
+        }
+
+        .logo:hover img {
+            transform: scale(1.2);
+        }
+
+        .logo img {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Main content container */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            margin-top: 20px;
+            transition: all 0.5s ease, filter 0.5s ease;
+            z-index: 1;
+        }
+
+        /* Rest of your existing CSS remains the same */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            transition: all 0.5s ease;
+            margin-right: var(--box-offset);
+        }
+
+        .slid .content-wrapper {
+            justify-content: flex-start;
+            padding-left: 10%;
+        }
+
+        .button {
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 600px;
+            height: auto;
+            background: none;
+            padding: 0;
+        }
+
+        .button img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .button:hover img {
+            transform: scale(1.1);
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-button {
+            border: none;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 100px;
+            height: auto;
+        }
+
+        .social-button img {
+            width: 100%;
+            height: auto;
+        }
+
+        .social-button:hover img {
+            transform: scale(1.1);
+        }
+
+        .spcoai-button {
+            display: none;
+            width: 150px;
+        }
+
+        .slid .spcoai-button {
+            display: block;
+        }
+
+        .info-box {
+            position: absolute;
+            right: calc(-1 * var(--box-width) - 50px);
+            top: 0;
+            width: var(--box-width);
+            background: var(--box-bg-color);
+            border: var(--box-border-width) solid var(--box-border-color);
+            border-radius: var(--box-border-radius);
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .slid .info-box {
+            right: 0;
+            opacity: 1;
+        }
+
+        .info-content {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #ffffff;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #86161d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background: #1d3c63;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="logo">
+        <img src="loltitle.png" height=150 alt="The title" title="the credits lol">
+    </a>
+    
+    <!-- Background image element -->
+    <div class="bg-image"></div>
+    
+    <!-- Dark overlay element -->
+    <div class="dark-overlay"></div>
+    
+    <div class="content-wrapper">
+        <div class="button-container">
+            <button class="button" onclick="slideContent('problem')"><img src="theproblem.png" alt="The Problem"></button>
+            <button class="button" onclick="slideContent('actions')"><img src="actions!!.png" alt="Actions"></button>
+            <button class="button" onclick="slideContent('effects')"><img src="thefffects.png" alt="The Effects"></button>
+            <button class="button" onclick="slideContent('learn')"><img src="learnnnnmore.png" alt="Learn More"></button>
+            
+            <div class="social-buttons">
+                <a href="https://www.gofundme.com/f/eebgr-guitars-for-kids" class="social-button" target="_blank"><img src="gofundme.png" alt="Instagram"></a>
+                <a href="https://www.instagram.com/guitars_4_kids/" class="social-button" target="_blank"><img src="insagramw.png" alt="Instagram"></a>
+                <button class="social-button"><img src="facebook.png" alt="Facebook"></button>
+                <button class="social-button spcoai-button"><img src="spcoai.png" alt="SPCOAI"></button>
+            </div>
+        </div>
+
+        <!-- Info Box (initially hidden) -->
+        <div class="info-box" id="infoBox">
+            <div class="info-content" id="infoContent">
+                Default content that will be replaced
+            </div>
+            <a href="#" class="read-more-btn" id="readMoreBtn">SEE MORE...</a>
+        </div>
+    </div>
+
+    <script>
+        const contentMap = {
+            'problem': 'Children love to express themselves, which comes as no surprise. Some children find comfort in sports, arts or music. For us, we love to express ourselves through music and have been doing so from a young age. Unfortunately, some children aren\'t as privileged or can\'t afford instruments to express themselves musically as guitars and other instruments can often be expensive and overpriced. Our goal is to raise enough money to purchase guitars and give them to under privileged kids in order for them to be able to pursue their passion and love for music as we do.',
+            'actions': 'Click more to see information about actions we are taking/plans moving forward!',
+            'effects': 'Information about the effects goes here. Describe the impacts or consequences related to your topic.',
+            'learn': 'Wanna learn more?! click :)'
+        };
+
+        let currentButtonType = '';
+
+        function slideContent(buttonType) {
+            document.body.classList.add('slid');
+            document.getElementById('infoContent').textContent = contentMap[buttonType];
+            document.getElementById('infoBox').style.opacity = '1';
+            currentButtonType = buttonType;
+            
+            const readMoreBtn = document.getElementById('readMoreBtn');
+            
+            // Set different links based on which button was clicked
+            if (buttonType === 'problem') {
+                readMoreBtn.href = 'theproblemtab.html';
+            } else if (buttonType === 'actions') {
+                readMoreBtn.href = 'theactionshaha.html';
+            } else if (buttonType === 'effects') {
+                readMoreBtn.href = 'theeffectslol.html';
+            } else if (buttonType === 'learn') {
+                readMoreBtn.href = 'readabook.html';
+            } else {
+                readMoreBtn.href = '#';
+                readMoreBtn.onclick = function(e) {
+                    e.preventDefault();
+                };
+            }
+        }
+    </script>
+</body>
+</html>

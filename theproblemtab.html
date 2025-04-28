@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitars for Kids - The Problem</title>
+    <style>
+        :root {
+            --base-font-size: 22px;
+            --header-height: 400px;
+            --section-spacing: 100px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: var(--base-font-size);
+            line-height: 1.7;
+        }
+
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: var(--header-height);
+            overflow: hidden;
+        }
+
+        .header-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            object-fit: cover;
+            z-index: 10;
+        }
+
+        .back-button-link {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 20;
+            width: 180px;
+            height: auto;
+            transition: all 0.2s ease;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .back-button-link:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            filter: drop-shadow(0 0 5px rgba(0, 115, 247, 0.5));
+        }
+
+        .content {
+            position: relative;
+            z-index: 5;
+            background: white;
+            margin-top: var(--header-height);
+            padding: 60px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #86161d;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #86161d;
+            margin-top: 60px;
+            border-bottom: 2px solid #86161d;
+            padding-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: var(--section-spacing);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        /* Normal image styling */
+        .content-image {
+            width: 45%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            margin: 30px 0;
+        }
+
+        .left-image {
+            float: left;
+            margin-right: 5%;
+        }
+
+        .right-image {
+            float: right;
+            margin-left: 5%;
+        }
+
+        .image-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            clear: both;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --base-font-size: 18px;
+                --header-height: 250px;
+                --section-spacing: 70px;
+            }
+            
+            .content {
+                padding: 30px;
+                margin-top: var(--header-height);
+            }
+
+            .back-button-link {
+                top: 20px;
+                left: 20px;
+                width: 120px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .content-image {
+                width: 100%;
+                float: none;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="menu.html" class="back-button-link">
+        <img src="backbutton.png" alt="Back to Menu" class="back-button">
+    </a>
+
+    <div class="header-container">
+        <img src="header1.png" alt="Header Image" class="header-image">
+    </div>
+
+    <div class="content">
+        <!-- Problem Section -->
+        <div class="section" id="problem-section">
+            <h1>So, whats the problem?</h1>
+            <p>Children love to express themselves, which comes as no surprise. Some children find comfort in sports, arts or music. For us, we love to express ourselves through music and have been doing so from a young age. Unfortunately, some children aren't as privileged or can't afford instruments to express themselves musically as guitars and other instruments can often be expensive and overpriced. Our goal is to raise enough money to purchase guitars and give them to under privileged kids in order for them to be able to pursue their passion and love for music as we do.</p>
+            
+            <div class="image-group">
+                <img src="child1.png" alt="Child playing guitar" class="content-image left-image">
+            </div>
+
+            <h2>Root Causes</h2>
+            <p>Many children who are passionate about music are unable to pursue their interests because instruments, such as guitars, are often expensive or for lack of a better term, difficult to locate, for underprivileged families. This can really limit their opportunities to express themselves.</p>
+
+            <div class="image-group">
+                <img src="child2.png" alt="Child learning guitar" class="content-image left-image">
+            </div>
+
+            <h2>Current issues</h2>
+            <p>An example of a current issue is in many schools, especially in low-income communities, music programs are underfunded or flat out cut because of lack of money. And as a result kids who want to express themselves especially affecting kids who can't afford private lessons.</p>
+        </div>
+    </div>
+</body>
+</html>

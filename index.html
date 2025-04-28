@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitars For Kids</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('backtofun.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #main-logo {
+            width: 400px;
+            max-width: 80%;
+            transition: all 1s ease;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .content {
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            width: 60%;
+            max-width: 600px;
+            line-height: 1.6;
+            font-size: 1.4rem;
+            padding: 0 20px;
+        }
+
+        .clicked #main-logo {
+            animation: none;
+            width: 200px;
+            transform: translateY(-100px);
+        }
+
+        .clicked .content {
+            opacity: 1;
+        }
+
+        .interest-link {
+            color: #0073f7;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .interest-link:hover {
+            transform: scale(1.05);
+            text-decoration: underline;
+        }
+
+        .click-prompt {
+            position: absolute;
+            bottom: 30%;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 300;
+            transition: opacity 0.5s ease;
+        }
+
+        .clicked .click-prompt {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                width: 85%;
+                font-size: 1.2rem;
+            }
+            
+            #main-logo {
+                width: 800px;
+            }
+
+            .click-prompt {
+                font-size: 1rem;
+                bottom: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <img src="sillylogo.png" alt="Logo" id="main-logo">
+        <div class="click-prompt">Click anywhere</div>
+        <div class="content" id="content">
+            <p>Guitars for kids is a fundraising project which aims to help raise money to buy guitars, which will then be given to kids who are less fortunate. This includes free lessons, and additional accessories for the guitars such as picks and stands.</p>
+            <a href="menu.html" class="interest-link">>I'm Interested<</a>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const logo = document.getElementById('main-logo');
+        const content = document.getElementById('content');
+
+        container.addEventListener('click', function() {
+            if (!container.classList.contains('clicked')) {
+                container.classList.add('clicked');
+            }
+        });
+    </script>
+</body>
+</html>

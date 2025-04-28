@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitars For Kids - Action Steps</title>
+    <style>
+        :root {
+            --base-font-size: 22px;
+            --header-height: 400px;
+            --section-spacing: 60px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: var(--base-font-size);
+            line-height: 1.7;
+        }
+
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: var(--header-height);
+            overflow: hidden;
+        }
+
+        .header-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            object-fit: cover;
+            z-index: 10;
+        }
+
+        .back-button-link {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 20;
+            width: 180px;
+            height: auto;
+            transition: all 0.2s ease;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .back-button-link:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            filter: drop-shadow(0 0 5px rgba(0, 115, 247, 0.5));
+        }
+
+        .content {
+            position: relative;
+            z-index: 5;
+            background: white;
+            margin-top: var(--header-height);
+            padding: 60px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #092408;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .action-steps {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            margin-bottom: var(--section-spacing);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            font-weight: bold;
+            color: #092408;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .step-details {
+            padding-left: 20px;
+        }
+
+        .step-details li {
+            margin-bottom: 15px;
+            list-style-type: disc;
+        }
+
+        /* Proof section styles */
+        .proof-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .proof-caption {
+            font-size: 1.5rem;
+            color: #092408;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .proof-images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .proof-image-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .proof-image {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .proof-image:hover {
+            transform: scale(1.05);
+        }
+
+        .proof-caption-hover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(134, 22, 29, 0.8);
+            color: white;
+            padding: 10px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .proof-image-container:hover .proof-caption-hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --base-font-size: 18px;
+                --header-height: 250px;
+                --section-spacing: 40px;
+            }
+            
+            .content {
+                padding: 30px;
+                margin-top: var(--header-height);
+            }
+
+            .back-button-link {
+                top: 20px;
+                left: 20px;
+                width: 120px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .step {
+                padding: 20px;
+            }
+
+            .proof-images {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .proof-image-container {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="menu.html" class="back-button-link">
+        <img src="backbutton.png" alt="Back to Menu" class="back-button">
+    </a>
+
+    <div class="header-container">
+        <img src="actions.png" alt="Header Image" class="header-image">
+    </div>
+
+    <div class="content">
+        <h1>Action Steps</h1>
+        
+        <div class="action-steps">
+            <!-- All your existing steps here... -->
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-number">Step 1</div>
+                <div class="step-title">Meet with Mr Burdick</div>
+                <ul class="step-details">
+                    <li>Discuss what goals need to be achieved</li>
+                    <li>What we will be graded on</li>
+                    <li>What is required</li>
+                </ul>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-number">Step 2</div>
+                <div class="step-title">Talk with Sean Hannan</div>
+                <ul class="step-details">
+                    <li>Discuss local guitar shops and how to get them started</li>
+                </ul>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-number">Step 3</div>
+                <div class="step-title">Have a meeting with Mr Haviland as a group</div>
+                <ul class="step-details">
+                    <li>Discuss if we as students are allowed to handle money raised</li>
+                </ul>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-number">Step 4</div>
+                <div class="step-title">Set up GoFundMe</div>
+                <ul class="step-details">
+                    <li>Use this as our main fundraising method</li>
+                </ul>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-number">Step 5</div>
+                <div class="step-title">Call foster homes and ask if they would like to be a part of our action</div>
+                <ul class="step-details">
+                    <li>Research and gather information on foster homes in the area and if they're willing to get a guitar, lessons, and more.</li>
+                </ul>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <div class="step-number">Step 6</div>
+                <div class="step-title">Ask family members and friends to donate</div>
+                <ul class="step-details">
+                    <li>Ask friends and family to help us on our journey by donating to our GoFundMe.</li>
+                </ul>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step">
+                <div class="step-number">Step 7</div>
+                <div class="step-title">Set up Instagram to bring attention to our GoFundMe</div>
+                <ul class="step-details">
+                    <li>Main source to bring people to our GoFundMe where we will list what we are doing, why we are doing it, and how people can help.</li>
+                </ul>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step">
+                <div class="step-number">Step 8</div>
+                <div class="step-title">Go to stores play music, and ask for donations</div>
+                <ul class="step-details">
+                    <li>Go to businesses and stores around town to bring attention to our cause</li>
+                    <li>We will play music and have signs describing what we are doing</li>
+                    <li>Will have a bucket for donations</li>
+                </ul>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="step">
+                <div class="step-number">Step 9</div>
+                <div class="step-title">Get guitars for the children from the distributor</div>
+                <ul class="step-details">
+                    <li>Find local guitar/music distributors in the area</li>
+                    <li>Explain to them what we are doing and what we stand for</li>
+                    <li>Ask if they are willing to partner with us and possibly offer us a discount on guitars</li>
+                    <li>Then buy the guitars in bulk</li>
+                </ul>
+            </div>
+
+            <!-- Step 10 -->
+            <div class="step">
+                <div class="step-number">Step 10</div>
+                <div class="step-title">Go to foster homes and give them guitars/Give them to the less fortunate kids from Google form</div>
+                <ul class="step-details">
+                    <li>Call the foster home willing to partner with us and ask them for a date and time that we could give and teach the children guitar.</li>
+                    <li>Go to the foster homes that had agreed to be a part of our mission and accepted a guitar.</li>
+                    <li>Give the guitars to the kids who requested one</li>
+                </ul>
+            </div>
+
+            <!-- Step 11 -->
+            <div class="step">
+                <div class="step-number">Step 11</div>
+                <div class="step-title">Go to foster homes and teach them how to play music/Show the kids who requested a guitar how to play</div>
+                <ul class="step-details">
+                    <li>Show them the guitar and give them basic information on it, such as the neck, head, body, and strings</li>
+                    <li>Teach them basics like tuning, basic riffs, and chords</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Proof Section -->
+        <div class="proof-section">
+            <div class="proof-caption">Proof we are moving along, and we aren't even finished yet!</div>
+            <div class="proof-images">
+                <div class="proof-image-container">
+                    <img src="proof1.png" alt="Instagram Growth" class="proof-image">
+                    <div class="proof-caption-hover">Slowly growing instagram followers</div>
+                </div>
+                <div class="proof-image-container">
+                    <img src="proof2.png" alt="GoFundMe Progress" class="proof-image">
+                    <div class="proof-caption-hover">GoFundMe money slowly increasing!</div>
+                </div>
+                <div class="proof-image-container">
+                    <img src="proof3.png" alt="Guitar Application" class="proof-image">
+                    <div class="proof-caption-hover">Guitar application for children to fill out to apply for guitars</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
